@@ -1,0 +1,36 @@
+﻿
+<ion-view view-title="Faça sua pergunta">
+    <ion-content>
+        <div class="bar bar-subheader bar-stable static text-center">
+            <strong class="title"><i class="icon ion-wand"></i> Pergunte ao Oráculo <i class="icon ion-wand"></i></strong> 
+        </div>
+        <div class="im-wrapper">
+            <!-- Ionic Components -->
+            
+
+            <label class="item item-input">
+                <span class="input-label">Faça sua pergunta</span>
+                <textarea ng-model="u.question" placeholder="Escreva aqui sua pergunta" id="textQuestion"> {{ question }} </textarea>
+            </label>
+
+            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="ask(u.question)">
+                    Perguntar!
+            </button>
+
+            <div class="resposta code energized-900 bold energized-100-bg" align="center" style='display: {{ visibility }}'>
+                <h1> {{ question }} <i class="icon ion-help"></i><h1>
+                <h2> {{ answer }}</h2>
+            </div>
+
+            <!--
+            <div align="center">
+                <button class="button button-fab button-balanced icon ion-wand"></button>
+                <button class="button button-fab button-assertive icon ion-ios-color-wand"></button>
+                <button class="button button-fab ink-dark button-calm icon ion-ios-color-wand-outline"></button>
+                <button class="button button-fab button-dark icon ion-heart" data-ink-color="#ff0000" data-ink-opacity=".8"></button>
+            </div>
+            -->
+
+        </div>
+    </ion-content>
+</ion-view>

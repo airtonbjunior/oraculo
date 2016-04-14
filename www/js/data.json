@@ -1,0 +1,12 @@
+{
+	"savedQuestions" : [
+		{
+		  "question": "Esse app é bom?",
+		  "answer" : "SIM"
+		}, 
+		{
+		  "question": "O dono vai ficar milionário?",
+		  "answer" : "NÃO"
+		}
+	]
+}
