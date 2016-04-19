@@ -3,7 +3,9 @@
     <ion-content class="im-wrapper">
     
     <ion-refresher on-refresh="doRefresh()"></ion-refresher>
-    <ion-list class="">
+
+    
+    <ion-list class="" ng-controller="ExtensionsCtrl">
 
         <ion-item ng-repeat='item in savedQuestion' class="card item-thumbnail-left item-icon-left item-icon-right item-text-wrap">
             
@@ -12,11 +14,9 @@
                 <h2>{{ item.question }}</h2>
                 <h3>{{ item.answer }}</h3>
             
-            <i class="icon ion-android-share-alt"></i>
+            <i class="icon ion-android-share-alt" ng-click="shareAnywhere(item.question, item.answer)"></i>
         </ion-item>
     </ion-list>
-
-
 
 
 <!--    

@@ -45,11 +45,13 @@
         });
     }
 
+    /*
     var fab = document.getElementById('fab');
     fab.addEventListener('click', function () {
         //location.href = 'https://twitter.com/airtonbjunior';
         window.open('https://twitter.com/airtonbjunior', '_blank');
     });
+*/
 
     // .fromTemplate() method
     var template = '<ion-popover-view>' +

@@ -1,4 +1,4 @@
-﻿app.controller('ExtensionsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $window) {
+﻿app.controller('ExtensionsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $window, $cordovaSocialSharing) {
 
     /* First of all, get all questions of the user */
     $scope.totalItems = $window.localStorage.length; // get the size to control the indices
@@ -132,6 +132,14 @@
         }
         $scope.$broadcast('scroll.refreshComplete');
     };
+
+
+    $scope.shareAnywhere = function (question, answer) {
+    /* The method signature: .share(msg, subject, file, link)*/                           
+
+        $cordovaSocialSharing.share("Mensagem", "Subject", "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", "htpp://airtonbjunior.com.br");
+        //$cordovaSocialSharing.shareViaFacebook('hahahaha', null, null);
+    }
 
     $scope.loading();
 
