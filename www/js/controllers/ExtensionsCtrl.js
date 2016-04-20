@@ -104,8 +104,25 @@
     };
 */
 
+    /* Form validation */
     $scope.sendMessage = function () { 
         
+        if ($scope.message.name == "" || $scope.message.name == null) {
+            alert("Escreva seu nome");
+            return;
+        }
+
+        var re = /\S+@\S+\.\S+/;
+        if (!re.test($scope.message.email)) { 
+            alert("Email inválido");
+            return;
+        }
+        
+        if ($scope.message.comment == "" || $scope.message.comment == null) {
+            alert("Escreva seu comentário");
+            return;
+        }
+
         // I didn't understood how this works, but works fine!
         $timeout(function() {
 
