@@ -149,7 +149,7 @@
         }
         $scope.$broadcast('scroll.refreshComplete');
 
-        document.getElementById('resposta').style.display = "none";
+        document.getElementById('answer').style.display = "none";
     };
 
 
