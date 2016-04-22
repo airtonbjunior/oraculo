@@ -52,7 +52,7 @@
         // For example's sake, hide the sheet after two seconds
         $timeout(function() {
             $ionicLoading.hide();
-        }, 2000);
+        }, 500);
     };
 
 /*
@@ -128,7 +128,7 @@
 
            $scope.visibilityMessage = "none";  // show the div that contains the question/answer - default is hidden      
 
-        }, 2000);
+        }, 1000);
         $scope.visibilityMessage = "block"; 
     };
 
@@ -148,13 +148,15 @@
             i++;
         }
         $scope.$broadcast('scroll.refreshComplete');
+
+        document.getElementById('resposta').style.display = "none";
     };
 
 
     $scope.shareAnywhere = function (question, answer) {
     /* The method signature: .share(msg, subject, file, link)*/                           
 
-        $cordovaSocialSharing.share("Mensagem", "Subject", "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", "htpp://airtonbjunior.com.br");
+        $cordovaSocialSharing.share("Eu usei o Oráculo, use você também!", "Subject", "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", "http://airtonbjunior.com.br/apps/oraculo");
         //$cordovaSocialSharing.shareViaFacebook('hahahaha', null, null);
     }
 

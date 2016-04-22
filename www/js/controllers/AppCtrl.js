@@ -97,7 +97,8 @@
             if (obj['question'] == question) {
                 $scope.answer = obj['answer'];
                 $scope.question = question; // In addition, we show the original question to the user
-                $scope.visibility = "";
+                // $scope.visibility = "";
+                document.getElementById('resposta').style.display = "block"; // Study if this is the best way to do. My concern is performance.
 
                 return;
             }
@@ -123,9 +124,10 @@
             $scope.totalItems = $window.localStorage.length; // refresh the totalItems
 
             document.getElementById("textQuestion").value = "";  // See how I can do that in a better way
-            $scope.visibility = ""; // show the div that contains the question/answer - default is hidden      
+            // $scope.visibility = ""; // show the div that contains the question/answer - default is hidden      
+            document.getElementById('resposta').style.display = "block"; // Study if this is the best way to do. My concern is performance.
 
-        }, 2000);
+        }, 500);
 
     };
 });
