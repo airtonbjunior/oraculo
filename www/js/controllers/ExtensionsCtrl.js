@@ -128,7 +128,7 @@
 
            $scope.visibilityMessage = "none";  // show the div that contains the question/answer - default is hidden      
 
-        }, 1000);
+        }, 2000);
         $scope.visibilityMessage = "block"; 
     };
 
@@ -147,9 +147,13 @@
             $scope.savedQuestion[i] = obj;
             i++;
         }
+
+        //$window.location.reload(); // I used this to reload the page... In some moments, the question list didn't appears.
+        // Update: I modified the cache view to false in extensions.html. The reload didn't work on android.
+
         $scope.$broadcast('scroll.refreshComplete');
 
-        document.getElementById('answer').style.display = "none";
+        if (document.getElementById('answer')) { document.getElementById('answer').style.display = "none"; }
     };
 
 
@@ -157,7 +161,6 @@
     /* The method signature: .share(msg, subject, file, link)*/                           
 
         $cordovaSocialSharing.share("Eu usei o Oráculo, use você também!", "Subject", "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", "http://airtonbjunior.com.br/apps/oraculo");
-        //$cordovaSocialSharing.shareViaFacebook('hahahaha', null, null);
     }
 
     $scope.loading();

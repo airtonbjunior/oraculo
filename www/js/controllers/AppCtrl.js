@@ -30,12 +30,14 @@
 
 
     // I'm using localStorage now!
+    /*
     $http.get('js/data.json').success (function (data) {   // Get the external data (json) - publish on my url
 
         $scope.alldata = data;
         $scope.questions = data.savedQuestions;
 
     });
+    */
 
 
     var navIcons = document.getElementsByClassName('ion-navicon');
@@ -75,6 +77,21 @@
     });
 
 
+    /* Methods that handle the date */
+    // For todays date;
+    Date.prototype.today = function () { 
+        return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
+    }
+
+    // For the time now
+    Date.prototype.timeNow = function () {
+         return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+    }
+    /* Methods that handle the date */
+
+
+
+
     // Put the answers on a external file
     var answers = ["Sim", "Não", "Talvez", "Não posso responder", "Só Deus sabe", "Você já sabe a resposta", "Não quero falar sobre isso", "Com certeza!", "Com certeza não!", "Infelizmente não"]; //Pensar em mais
 
@@ -111,16 +128,22 @@
 
             $ionicLoading.hide();
 
+            var date = new Date();
+
+            var dateFormated = date.today() + " - " + date.timeNow();
 
             // If the code runs here, the user doesn't make this question before
             $scope.answer = answers[Math.floor(((Math.random() * 9) + 1))];  // Choose the answer randomly
             $scope.question = question; // In addition, we show the original question to the user
-            newObject = { question: question, answer: $scope.answer }; // Create the object
-            $scope.alldata.savedQuestions.push(newObject);  // Save the data on json file
+            //$scope.date = now.getDate();
+            
+
+            //newObject = { question: question, answer: $scope.answer, date: now.getDate() }; // Create the object
+            //$scope.alldata.savedQuestions.push(newObject);  // Save the data on json file
             
             
             /* Save the data on the localstorage! */
-            $window.localStorage.setItem(($scope.totalItems), JSON.stringify( {'question': question, 'answer': $scope.answer} ) );
+            $window.localStorage.setItem(($scope.totalItems), JSON.stringify( { 'question': question, 'answer': $scope.answer, 'date': dateFormated } ) );
             $scope.totalItems = $window.localStorage.length; // refresh the totalItems
 
             document.getElementById("textQuestion").value = "";  // See how I can do that in a better way

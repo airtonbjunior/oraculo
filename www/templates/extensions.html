@@ -1,14 +1,14 @@
 ﻿
-<ion-view view-title="Minhas perguntas">
+<ion-view view-title="Minhas perguntas" cache-view="false">
     <ion-content class="im-wrapper">
     
     <ion-refresher on-refresh="doRefresh()"></ion-refresher>
 
     
-    <ion-list class="" ng-controller="ExtensionsCtrl">
+    <ion-list ng-controller="ExtensionsCtrl">
 
         <ion-item ng-repeat='item in savedQuestion' class="card item-thumbnail-left item-icon-left item-icon-right item-text-wrap">
-            
+        <div class="item item-divider" style="padding: 0;">{{ item.date }}</div>     <!-- Force the padding... the item.css set the padding in 16px -->      
         <i class="icon ion-help-circled energized-900"></i>
                 
                 <h2>{{ item.question }}</h2>
@@ -61,6 +61,10 @@
         </script>
 -->
 
-
+<!--
     </ion-content>
+        <div class="bar bar-footer bar-balanced">
+        <div class="title">airtonbjunior@gmail.com</div>
+    </div>
+-->
 </ion-view>
