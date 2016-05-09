@@ -1,4 +1,4 @@
-﻿app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout, $http, $window, $ionicLoading) { //add $window to use $window.localStorage    // Form data for the login modal
+﻿app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout, $window, $ionicLoading) { //add $window to use $window.localStorage    // Form data for the login modal
     $scope.loginData = {};
 
     $scope.visibility = "none";
