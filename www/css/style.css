@@ -208,6 +208,15 @@ p {
     right: 16px !important;
     top: 16px !important;
 }
+
 .platform-android .popover{
-margin-top:10px;
+    margin-top:10px;
+}
+
+.wordWrap { 
+   white-space: pre-wrap;      /* CSS3 */   /* This works fine! */
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
 }
